@@ -12,8 +12,8 @@ let accounts
 beforeEach(async () => {
 	accounts = await web3.eth.getAccounts()
 
-	lottery = await new web3.eth.Contract(JSON.parse(compile.interface))
-		.deploy({ data: compile.bytecode })
+	lottery = await new web3.eth.Contract(compile.abi)
+		.deploy({ data: compile.evm.bytecode.object })
 		.send({ from: accounts[0], gas: '1000000' })
 })
 

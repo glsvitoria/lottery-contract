@@ -14,11 +14,11 @@ const deploy = async () => {
 
 	console.log('Attempting to deploy from account', accounts[0])
 
-	const result = await new web3.eth.Contract(JSON.parse(compile.interface))
-		.deploy({ data: compile.bytecode })
+	const result = await new web3.eth.Contract(compile.abi)
+		.deploy({ data: compile.evm.bytecode.object })
 		.send({ from: accounts[0], gas: '1000000' })
 
-	console.log('interface:', compile.interface)
+	console.log('interface:', JSON.stringify(compile.abi))
 	console.log('Contract deployed to', result.options.address)
 
 	provider.engine.stop()
