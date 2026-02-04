@@ -108,4 +108,19 @@ describe('Lottery Contract', () => {
 
 		assert.equal(moneyInLottery, 0)
 	})
+
+	it('fill lastWinner correctly when the manager pickWinner', async () => {
+		await lottery.methods.enter().send({
+			from: accounts[1],
+			value: web3.utils.toWei('2', 'ether'),
+		})
+
+		await lottery.methods.pickWinner().send({
+			from: accounts[0],
+		})
+
+		const lastWinner = await lottery.methods.lastWinner().call()
+
+		assert.equal(lastWinner, accounts[1])
+	})
 })
