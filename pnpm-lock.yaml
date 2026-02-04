@@ -11,6 +11,9 @@ importers:
       '@truffle/hdwallet-provider':
         specifier: ^2.1.15
         version: 2.1.15(@babel/core@7.29.0)(bufferutil@4.0.7)(utf-8-validate@6.0.3)
+      dotenv:
+        specifier: ^16.4.5
+        version: 16.6.1
       ganache:
         specifier: ^7.9.2
         version: 7.9.2
@@ -756,6 +759,10 @@ packages:
 
   dom-walk@0.1.2:
     resolution: {integrity: sha512-6QvTW9mrGeIegrFXdtQi9pk7O/nSK6lSdXW2eqUspN5LWD7UTji2Fqw5V2YLjBpHEoU9Xl/eUWNpDeZvoyOv2w==}
+
+  dotenv@16.6.1:
+    resolution: {integrity: sha512-uBq4egWHTcTt33a72vpSG0z3HnPuIl6NqYcTrKEg2azoEyl2hpW0zqlxysq2pK9HlDIHyHyakeYaYnSAwd8bow==}
+    engines: {node: '>=12'}
 
   dunder-proto@1.0.1:
     resolution: {integrity: sha512-KIN/nDJBQRcXw0MLVhZE9iQHmG68qAVIBg9CqmUYjmQIhgij9U5MFvrqkUL5FbtyyzZuOeOt0zdeRe4UY7ct+A==}
@@ -3302,6 +3309,8 @@ snapshots:
   diff@5.2.2: {}
 
   dom-walk@0.1.2: {}
+
+  dotenv@16.6.1: {}
 
   dunder-proto@1.0.1:
     dependencies:
