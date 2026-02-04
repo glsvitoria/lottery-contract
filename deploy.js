@@ -1,10 +1,13 @@
 import HDWalletProvider from '@truffle/hdwallet-provider'
 import { Web3 } from 'web3'
 import compile from './compile.js'
+import dotenv from 'dotenv'
+
+dotenv.config()
 
 const provider = new HDWalletProvider(
-	'subject tray poem alien law wedding item left tent return exile lizard',
-	'https://sepolia.infura.io/v3/7a1f1ca08dfb4f2290fef4dec758e9bd'
+	process.env.MNEMONIC,
+	`https://sepolia.infura.io/v3/${process.env.INFURA_API_KEY}`
 )
 
 const web3 = new Web3(provider)
